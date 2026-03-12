@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Codepen, Terminal, Server, Database, Braces, Globe, Cpu, Code2, Send, ArrowUpRight, FileCode, Gamepad2, FolderOpen, Boxes, Container, GitBranch, Joystick, Sparkles, MonitorSmartphone } from "lucide-react";
+import { Github, Linkedin, Mail, Codepen, Terminal, Server, Database, Braces, Globe, Cpu, Code2, Send, ArrowUpRight, FileCode, Gamepad2, FolderOpen, Boxes, Container, GitBranch, Joystick, Sparkles, MonitorSmartphone, FileText } from "lucide-react";
 
 export default function Home() {
   return (
@@ -107,54 +107,58 @@ export default function Home() {
         </div>
 
         {/* Social Links - Github & LinkedIn as Buttons */}
-        <div className="md:col-span-1 md:row-span-1 flex flex-col gap-2 justify-center">
+        <div className="md:col-span-1 md:row-span-1 flex flex-col gap-3 justify-center">
             <a href="https://github.com/Tanish-Desai" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 rounded-xl border border-indigo-500 p-2.5 flex flex-row items-center justify-between text-white hover:bg-indigo-700 hover:scale-[1.02] transition-all group cursor-pointer shadow-md">
                 <div className="flex items-center gap-3">
-                    <Github className="w-20 h-20 group-hover:scale-110 transition-transform" />
-                    <span className="font-bold text-sm">GitHub</span>
+                    <Github className="w-15 h-20 group-hover:scale-110 transition-transform" />
+                    <span className="font-bold text-base">GitHub</span>
                 </div>
                 <ArrowUpRight className="w-8 h-20 opacity-50 group-hover:opacity-100 transition-opacity" />
             </a>
 
             <a href="https://www.linkedin.com/in/tanish-desai-400199326/" target="_blank" rel="noopener noreferrer" className="bg-blue-600 rounded-xl border border-blue-500 p-2.5 flex flex-row items-center justify-between text-white hover:bg-blue-700 hover:scale-[1.02] transition-all group cursor-pointer shadow-md">
                  <div className="flex items-center gap-3">
-                    <Linkedin className="w-20 h-20 group-hover:scale-110 transition-transform" />
-                     <span className="font-bold text-sm">LinkedIn</span>
+                    <Linkedin className="w-15 h-20 group-hover:scale-110 transition-transform" />
+                     <span className="font-bold text-base">LinkedIn</span>
                 </div>
                 <ArrowUpRight className="w-8 h-20 opacity-50 group-hover:opacity-100 transition-opacity" />
             </a>
         </div>
 
+        {/* Resume Button */}
+        <a href="https://drive.google.com/file/d/1AVlqM7kz50XvC4UZneVZ9G6eUK13k3fu/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="md:col-span-1 md:row-span-1 bg-emerald-950 rounded-xl border border-emerald-800 p-2.5 flex flex-row items-center justify-between text-white hover:bg-emerald-900 hover:scale-[1.02] transition-all group cursor-pointer shadow-md">
+            <div className="flex items-center gap-3">
+                <FileText className="w-20 h-20 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <span className="font-bold text-base">Resume</span>
+            </div>
+            <ArrowUpRight className="w-8 h-20 opacity-50 group-hover:opacity-100 transition-opacity" />
+        </a>
+
          {/* Projects Button */}
-         <Link href="/projects" className="md:col-span-2 md:row-span-1 bg-neutral-900 rounded-3xl border border-neutral-800 p-6 flex flex-col items-center justify-center gap-3 hover:border-indigo-500/50 hover:bg-neutral-900/80 hover:scale-[1.02] transition-all group cursor-pointer">
-            <div className="w-14 h-14 rounded-2xl bg-neutral-800 flex items-center justify-center border border-neutral-700 group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 transition-all">
-                <FolderOpen className="w-7 h-7 text-neutral-400 group-hover:text-indigo-400 transition-colors" />
+         <Link href="/projects" className="md:col-span-1 md:row-span-1 bg-neutral-900 rounded-xl border border-neutral-800 p-2.5 flex flex-row items-center justify-between text-white hover:border-indigo-500/50 hover:scale-[1.02] transition-all group cursor-pointer shadow-md">
+            <div className="flex items-center gap-3">
+                <FolderOpen className="w-20 h-20 text-neutral-400 group-hover:text-indigo-400 transition-colors group-hover:scale-110 transition-transform" />
+                <span className="font-bold text-base">Projects</span>
             </div>
-            <div className="text-center">
-                <h2 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Projects</h2>
-                <p className="text-xs text-neutral-500 mt-1">Explore all my work &rarr;</p>
-            </div>
+            <ArrowUpRight className="w-8 h-20 opacity-50 group-hover:opacity-100 transition-opacity" />
         </Link>
 
 
 
         {/* Contact Form */}
-        <div className="md:col-span-2 bg-neutral-100 text-neutral-900 rounded-3xl p-6 flex flex-row items-center justify-between overflow-hidden relative group">
+        <div className="md:col-span-4 bg-neutral-100 text-neutral-900 rounded-3xl p-6 flex flex-row items-center justify-between overflow-hidden relative group">
             <div className="relative z-10 flex flex-col justify-center h-full w-full max-w-sm">
                  <h2 className="text-xl font-bold mb-1">Let's work together</h2>
                  <p className="text-neutral-600 text-sm mb-4">
-                    Interested in embedded systems? Reach out.
+                    Wanna reach out?
                  </p>
-                 <form className="flex gap-2">
-                    <input 
-                        type="email" 
-                        placeholder="your@email.com" 
-                        className="bg-white border border-neutral-300 rounded-full px-4 py-2 w-full text-sm outline-none focus:ring-2 focus:ring-neutral-400 transition-all placeholder:text-neutral-500"
-                    />
-                    <button className="bg-black text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center hover:scale-105 transition-transform">
-                        <Send className="w-4 h-4" />
-                    </button>
-                 </form>
+                 <a
+                    href="mailto:tanshikode79@gmail.com"
+                    className="inline-flex items-center gap-2 bg-black text-white rounded-full px-5 py-2.5 text-sm font-medium hover:scale-105 transition-transform w-fit"
+                 >
+                    <Send className="w-4 h-4" />
+                    Send a message
+                 </a>
             </div>
             <Mail className="hidden sm:block absolute -bottom-8 -right-8 w-40 h-40 text-neutral-200 rotate-12 group-hover:rotate-0 transition-transform duration-500 pointer-events-none" />
         </div>
