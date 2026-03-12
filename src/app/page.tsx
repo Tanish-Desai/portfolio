@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Codepen, Terminal, Server, Database, Braces, Globe, Cpu, Code2, Send, ArrowUpRight, FileCode, Coffee, Gamepad2, Wifi, Battery, Keyboard } from "lucide-react";
+import Link from "next/link";
+import { Github, Linkedin, Mail, Codepen, Terminal, Server, Database, Braces, Globe, Cpu, Code2, Send, ArrowUpRight, FileCode, Gamepad2, FolderOpen, Boxes, Container, GitBranch, Joystick, Sparkles, MonitorSmartphone } from "lucide-react";
 
 export default function Home() {
   return (
@@ -50,9 +51,9 @@ export default function Home() {
                 </div>
            </div>
            
-           <div className="flex-1 flex flex-col justify-center gap-4">
-                {/* Languages Group */}
-                <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
+           <div className="flex-1 flex flex-col justify-center gap-2">
+                {/* Languages Group — 2×5 */}
+                <div className="grid grid-cols-5 gap-0.5">
                     <TechIcon icon={FileCode} label="Java" />
                     <TechIcon icon={Cpu} label="C++" />
                     <TechIcon icon={Code2} label="Python" />
@@ -61,20 +62,25 @@ export default function Home() {
                     <TechIcon icon={Globe} label="HTML" />
                     <TechIcon icon={FileCode} label="CSS" />
                     <TechIcon icon={Braces} label="JS" />
+                    <TechIcon icon={Braces} label="TS" />
+                    <TechIcon icon={Gamepad2} label="GDScript" />
                 </div>
 
                 {/* Divider */}
                 <div className="h-px bg-neutral-800 w-full" />
 
-                {/* Tools Group */}
-                <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
+                {/* Tools Group — 2×5 */}
+                <div className="grid grid-cols-5 gap-0.5">
                     <TechIcon icon={Terminal} label="Linux" />
-                    <TechIcon icon={Globe} label="Docker" />
+                    <TechIcon icon={Container} label="Docker" />
                     <TechIcon icon={Database} label="MySQL" />
                     <TechIcon icon={Server} label="Ntwk" />
-                    <TechIcon icon={Braces} label="Git" />
+                    <TechIcon icon={GitBranch} label="Git" />
                     <TechIcon icon={Cpu} label="Arduino" />
-                    <TechIcon icon={Gamepad2} label="CV" />
+                    <TechIcon icon={MonitorSmartphone} label="OpenCV" />
+                    <TechIcon icon={Joystick} label="Godot" />
+                    <TechIcon icon={Sparkles} label="Next.js" />
+                    <TechIcon icon={Boxes} label="Vite" />
                 </div>
            </div>
         </div>
@@ -119,39 +125,18 @@ export default function Home() {
             </a>
         </div>
 
-         {/* More Projects List (Compact) */}
-         <div className="md:col-span-2 md:row-span-1 bg-neutral-900 rounded-3xl border border-neutral-800 p-6 flex flex-col gap-2 hover:border-neutral-700 transition-colors overflow-y-auto">
-            <h2 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-1 flex items-center gap-2">
-                <Codepen className="w-4 h-4" /> Other Projects
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <ProjectItem title="Secure RAG Engineering" lang="Research" href="#" />
-                <ProjectItem title="SQL Assignment Automator" lang="Python" href="#" />
-                <ProjectItem title="Network Load Balancer" lang="C++ / Systems" href="#" />
-                <ProjectItem title="Polyglot File Gen" lang="Python / Sec" href="https://github.com/Tanish-Desai/PolyglotGen" />
+         {/* Projects Button */}
+         <Link href="/projects" className="md:col-span-2 md:row-span-1 bg-neutral-900 rounded-3xl border border-neutral-800 p-6 flex flex-col items-center justify-center gap-3 hover:border-indigo-500/50 hover:bg-neutral-900/80 hover:scale-[1.02] transition-all group cursor-pointer">
+            <div className="w-14 h-14 rounded-2xl bg-neutral-800 flex items-center justify-center border border-neutral-700 group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 transition-all">
+                <FolderOpen className="w-7 h-7 text-neutral-400 group-hover:text-indigo-400 transition-colors" />
             </div>
-        </div>
+            <div className="text-center">
+                <h2 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Projects</h2>
+                <p className="text-xs text-neutral-500 mt-1">Explore all my work &rarr;</p>
+            </div>
+        </Link>
 
-        {/* Main Project Display */}
-        <div className="md:col-span-2 bg-neutral-900 rounded-3xl border border-neutral-800 p-6 flex flex-col justify-center hover:border-neutral-700 transition-colors group">
-            <div className="flex justify-between items-center mb-2">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center border border-neutral-700 flex-shrink-0">
-                        <Terminal className="w-5 h-5 text-indigo-400" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold text-white leading-tight group-hover:text-indigo-400 transition-colors">AI Exam Formatter Tool</h3>
-                        <p className="text-neutral-500 text-xs font-mono">Python • Prompt Engineering</p>
-                    </div>
-                </div>
-                <a href="#" target="_blank" className="p-2 rounded-full bg-neutral-800 hover:bg-white hover:text-black transition-colors flex-shrink-0">
-                    <ArrowUpRight className="w-4 h-4" />
-                </a>
-            </div>
-            <p className="text-neutral-400 text-sm leading-relaxed line-clamp-2">
-                An AI-powered utility designed to ingest question banks and automatically format them into standardized examination templates.
-            </p>
-        </div>
+
 
         {/* Contact Form */}
         <div className="md:col-span-2 bg-neutral-100 text-neutral-900 rounded-3xl p-6 flex flex-row items-center justify-between overflow-hidden relative group">
@@ -181,23 +166,13 @@ export default function Home() {
 
 function TechIcon({ icon: Icon, label }: { icon: any, label: string }) {
   return (
-    <div className="flex flex-col items-center gap-2 group p-2 rounded-lg hover:bg-neutral-800/50 transition-colors">
+    <div className="flex flex-col items-center gap-1 group py-2 px-1 rounded-lg hover:bg-neutral-800/50 transition-colors w-full">
       <div className="p-2 rounded-lg bg-neutral-800 group-hover:bg-neutral-700 transition-colors">
          <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
       </div>
-      <span className="text-[10px] uppercase font-bold text-neutral-500 group-hover:text-neutral-300 transition-colors">{label}</span>
+      <span className="text-[10px] uppercase font-bold text-neutral-500 group-hover:text-neutral-300 transition-colors truncate w-full text-center leading-none">{label}</span>
     </div>
   );
 }
 
-function ProjectItem({ title, lang, href }: { title: string, lang: string, href: string }) {
-    return (
-        <a href={href} target={href !== "#" ? "_blank" : undefined} className="flex items-center justify-between p-3 rounded-lg bg-neutral-800/30 hover:bg-neutral-800 hover:scale-[1.02] transition-all border border-transparent hover:border-neutral-700 group">
-            <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500/50 group-hover:bg-indigo-400 transition-colors"></div>
-                <span className="font-medium text-neutral-300 text-sm group-hover:text-white transition-colors">{title}</span>
-            </div>
-            <div className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-500 font-mono border border-neutral-700 group-hover:border-neutral-600 transition-colors">{lang}</div>
-        </a>
-    )
-}
+
