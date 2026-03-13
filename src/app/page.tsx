@@ -85,23 +85,68 @@ export default function Home() {
            </div>
         </div>
 
-        {/* DSA Stats - LeetCode Style */}
-        <div className="md:col-span-1 md:row-span-1 bg-neutral-900 rounded-3xl border border-neutral-800 p-4 flex flex-col justify-between hover:border-neutral-700 transition-colors relative overflow-hidden">
-            <div className="flex items-center justify-between mb-1 relative z-10">
-                <span className="text-xs font-medium text-neutral-300">Education</span>
-                <Globe className="w-4 h-4 text-neutral-500" />
+        {/* Coding Profiles + Education */}
+        <div className="md:col-span-1 md:row-span-2 flex flex-col gap-3">
+            <div className="md:h-1/4 bg-neutral-900 rounded-3xl border border-neutral-800 p-3 flex flex-col hover:border-neutral-700 transition-colors">
+                <div className="flex items-center justify-between">
+                    <span className="text-xs font-medium text-neutral-300 uppercase tracking-wider">Coding Profiles</span>
+                    <Code2 className="w-4 h-4 text-neutral-500" />
+                </div>
+                <div className="grid grid-cols-2 gap-2 mt-2 flex-1">
+                    <a
+                        href="https://leetcode.com/u/Tanish_Desai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative overflow-hidden rounded-2xl border border-amber-600/40 bg-gradient-to-br from-amber-950/70 via-neutral-900 to-neutral-950 px-2.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/70"
+                    >
+                        <div className="absolute -right-4 -top-4 h-10 w-10 rounded-full bg-amber-500/20 blur-md transition-opacity group-hover:opacity-100" />
+                        <div className="relative z-10 flex items-start justify-between gap-2">
+                            <div className="space-y-0.5">
+                                <p className="text-xs font-semibold text-amber-300">LeetCode</p>
+                                <p className="text-[10px] text-amber-200/80">Rating 1500+</p>
+                            </div>
+                            <img src="/icons/leetcode.svg" alt="LeetCode" className="h-7 w-7 object-contain" />
+                        </div>
+                    </a>
+                    <a
+                        href="https://www.codechef.com/users/viridiana78"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative overflow-hidden rounded-2xl border border-orange-700/50 bg-gradient-to-tr from-orange-950/80 via-neutral-900 to-neutral-950 px-2.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-400/70"
+                    >
+                        <div className="absolute -left-4 -bottom-4 h-10 w-10 rounded-full bg-orange-500/20 blur-md transition-opacity group-hover:opacity-100" />
+                        <div className="relative z-10 flex items-start justify-between gap-2">
+                            <div className="space-y-0.5">
+                                <p className="text-xs font-semibold text-orange-300">CodeChef</p>
+                                <p className="text-[10px] text-orange-200/80">Rating 1400+</p>
+                            </div>
+                            <img src="/icons/codechef.svg" alt="CodeChef" className="h-7 w-7 object-contain" />
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div className="flex flex-col justify-end h-full gap-1 relative z-10">
-                <span className="text-lg font-bold text-white tracking-tighter">VIT Chennai</span>
-                <span className="text-xs text-neutral-500 font-medium">B.Tech CSE</span>
-                 <span className="text-[10px] text-neutral-400 mt-1">CGPA: 8.91</span>
-                 <span className="text-[10px] text-neutral-500">Expected 2028</span>
-            </div>
-            
-            <div className="space-y-2 relative z-10 mt-2">
-               {/* Decorative bar */}
-                <div className="w-full bg-neutral-800 h-1 rounded-full overflow-hidden flex">
-                    <div className="bg-indigo-500 h-full w-[70%]" />
+
+            <div className="md:h-3/4 bg-neutral-900 rounded-3xl border border-neutral-800 p-4 flex flex-col justify-between hover:border-neutral-700 transition-colors relative overflow-hidden">
+                <div className="flex items-center justify-between mb-3 relative z-10">
+                    <span className="text-xs font-medium text-neutral-300 uppercase tracking-wider">Studying At</span>
+                    <Globe className="w-4 h-4 text-neutral-500" />
+                </div>
+                <div className="relative z-10 h-full flex flex-col gap-3">
+                    <div className="rounded-2xl border border-neutral-800 bg-neutral-950/50 p-3">
+                        <p className="text-sm font-semibold text-white leading-snug">Vellore Institute of Technology, Chennai</p>
+                        <p className="text-xs text-indigo-400 mt-1">B.Tech in Computer Science and Engineering</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-2 mt-auto">
+                        <div className="rounded-xl border border-neutral-800 bg-neutral-950/40 p-2.5">
+                            <p className="text-[10px] uppercase tracking-wider text-neutral-500">Current CGPA</p>
+                            <p className="text-base font-semibold text-white">8.91</p>
+                        </div>
+                        <div className="rounded-xl border border-neutral-800 bg-neutral-950/40 p-2.5">
+                            <p className="text-[10px] uppercase tracking-wider text-neutral-500">Expected</p>
+                            <p className="text-base font-semibold text-white">2028</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,7 +191,7 @@ export default function Home() {
 
 
         {/* Contact Form */}
-        <div className="md:col-span-4 bg-neutral-100 text-neutral-900 rounded-3xl p-6 flex flex-row items-center justify-between overflow-hidden relative group">
+        <div className="md:col-span-3 md:col-start-2 bg-neutral-100 text-neutral-900 rounded-3xl p-6 flex flex-row items-center justify-between overflow-hidden relative group">
             <div className="relative z-10 flex flex-col justify-center h-full w-full max-w-sm">
                  <h2 className="text-xl font-bold mb-1">Let's work together</h2>
                  <p className="text-neutral-600 text-sm mb-4">
